@@ -1,0 +1,27 @@
+//2.1g
+#include <stdio.h>
+#include <math.h>
+float func(float x)
+{
+	float y;
+	y=1/tanf(x);
+	printf("%f", y);
+	return 0;
+}
+
+int main()
+{
+	float x;
+	scanf("%f", &x);
+	func(x);
+}
+
+//1.2b
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	printf(" x  |  1   |  2   |  3   |  4   |  5 \n");
+	printf("--- +---   +---   +---   +---   +---\n");
+	printf("F(x)|  %.0lf   | %.2lf | %.2lf |  %.0lf   | %.2lf", sqrt(1), sqrt(2), sqrt(3), sqrt(4), sqrt(5));
+}
