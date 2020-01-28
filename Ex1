@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello, world!\n");
+	printf("What's your name?\n");
+	char str[10];
+	scanf("%s", str);
+	printf("Hello, %s!",str);
+}
+	
