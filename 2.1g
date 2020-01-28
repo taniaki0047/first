@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+float func(float x)
+{
+	float y;
+	y=1/tanf(x);
+	printf("%f", y);
+	return 0;
+}
+
+int main()
+{
+	float x;
+	scanf("%f", &x);
+	func(x);
+}
+	
