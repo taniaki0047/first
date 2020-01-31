@@ -1,0 +1,45 @@
+6
+#include <stdio.h>
+#include <inttypes.h>
+int main()
+{
+	int32_t a,b,res;
+	scanf("%d %d", &a, &b);
+	res=a+b;
+	if (res>0)
+	printf("%d",res);
+	else
+	printf("Error");
+}
+9 в
+#include <stdio.h>
+float func(float a, float x)
+{
+	float y;
+	if (x>0)
+	y=a*x;
+	else
+	y=x;
+	return y;
+}
+int main()
+{
+	float a, x;
+	scanf("%f %f", &a, &x);
+	printf("f(x)=%f", func(a, x));
+}
+12
+#include <stdio.h>
+int main()
+{
+	float x, y, z, r, h;
+	printf("Vvedite vusoty i radius:");
+	scanf("%f %f", &h, &r);
+	printf("Vvedite koordynaty:");
+	scanf("%f %f %f", &x, &y, &z);
+	if(x<=r && y<=r && z<=h)
+	printf("Tochka nalezhyt");
+	else
+	printf("Tochka ne nalezhyt");
+}
+	
