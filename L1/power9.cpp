@@ -5,5 +5,5 @@ int main() {
 	scanf_s("%g", &x);
 	x = x * x * x;
 	x = x * x * x;
-	printf("x = %g", x);
+	printf("x^9 = %g", x);
 }
