@@ -1,0 +1,88 @@
+//поменять и-ый и жи-ый биты местами 
+#include <stdio.h>
+#include <math.h>
+#define N 32
+int main()
+{
+  unsigned n,i,j;
+  unsigned a[N];
+  unsigned i1, j1;
+  printf("Vvedite n ta i, j ");
+  scanf("%u %u %u", &n,&i,&j);
+  for (int i = 0;i<sizeof(unsigned)*8; i++)
+  {
+    a[i]=n & 1;
+    n = n >> 1;
+  }
+  i1 = a[i]; j1= a[j];
+  a[i] = j1; a[j] = i1;
+  unsigned res=0;
+  for(int i=sizeof(unsigned)*8;i>0;i--)
+  {
+    res+=a[i] * pow(2,i);
+  }
+  printf("%u",res);
+}
+//ввести 2 числа и найти общее кол-во 1 + сколько битов вообще совпалает 
+#include <stdio.h>
+#define N 32
+int main()
+{
+  unsigned n, m;
+  int a_n[N], a_m[N];
+  unsigned ed=0;
+  unsigned num= 0;
+  printf("Vvedite N ta M:");
+  scanf("%u %u", &n, &m);
+  for(int i = 0;i<sizeof(n)*8;i++)
+  {
+    a_n[i]=n&1;
+    n=n>>1;
+  }
+  for(int i=0; i<sizeof(n)*8; i++)
+  {
+    a_m[i]=m&1;
+    m=m>>1;
+  }
+  for(int i=sizeof(n)*8-1; i>=0; i--)
+  {
+    if (a_m[i]==a_n[i])
+    {
+      if (a_m[i]==1)
+      {
+        ed+=1;
+      }
+      num+=1;
+    }
+  }
+  printf("Obschie edinitci=%u\n",ed);
+  printf("Obschie bity=%u\n", num);
+}
+//инвертировать битовое представление + вывести двоичное и десятичное представление 
+#include <stdio.h>
+#include <math.h>
+#define N 32
+int main()
+{
+  unsigned x,x1=0;
+  unsigned a[N];
+  printf("x=");
+  scanf("%u", &x);
+  unsigned n = x;
+  for(int i = 0; i < sizeof(unsigned)*8; i++)
+  {
+    a[i] = x & 1;
+    x = x >> 1;
+  }
+  printf("Bit: ");
+  for(int i=sizeof(unsigned)*8-1; i>=0 ; i--)
+  {
+    printf("%u",a[i]);
+  }
+  printf(" Inversia: ");
+  for(int i=0; i<sizeof(unsigned)*8; i++){
+    printf("%u",a[i]);
+    x1+=a[31-i]*pow(2,i);
+  }
+  printf(" Chislo: %u",x1);
+}
