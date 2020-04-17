@@ -1,0 +1,67 @@
+//ввести 2 строки и число н, на н-тое место в 1 строке вставить 2
+#include <stdio.h>
+#include <string.h>
+#define N 200
+void change(char a[N], char b[N], int k)
+{
+	char c[2*N];
+	int n=strlen(b);
+	strncpy(c, a, k);
+	strcat(c,b);
+	strcat(c, a+k);
+	printf("%s \n", c);
+}
+void input(char s[N]) 
+{
+	int c;
+	int i = 0;
+	while ((c = getchar()) != '\n') {
+		s[i] = c;
+		++i;
+	}
+	s[i] = '\0';
+}
+int main()
+{
+	char s1[N], s2[N], s3[N];
+	unsigned k;
+	input(s1); input(s2);
+	printf("k = "); 
+	scanf("%u", &k);
+	change(s1, s2, k);
+}
+
+//из строки 1 удалить все вхождения элеметов строки 2
+#include <stdio.h>
+#define MAX 100
+#define DEL 10
+void input(char s[100])
+{
+	int c;
+	int i = 0;
+	while ((c = getchar()) != '\n') 
+	{
+		s[i] = c;
+		++i;
+	}
+	s[i] = '\0';
+}
+void change(char s[], char s2[])
+{
+	int i, j;
+	for (int k = 0; s2[k] != '\0'; k++) 
+	{ 
+		for (i = j = 0; s[i] != '\0'; i++)
+			if (s[i] != s2[k])
+				s[j++] = s[i];
+		s[j] = '\0';
+	}
+}
+int main() {
+	char str[MAX];
+	char str1[DEL];	 	
+	input(str);
+	input(str1);b
+	change(str, str1);
+	printf("%s\n", str);
+}
